@@ -40,9 +40,3 @@ print(b2.get_price())
 
 # TODO: properties with double underscores are hidden by the interpreter
 print(b1._Book__secret)
-
-# -------------------------------------Learning--------------------------------------
-
-"""( _ ) underscore in front of any attribute and method:
-
-    It ( _ ) is used to give other developers a hint that this attribute is considered internal to the class and is not for public consumption. It tells don't use this (attribute / method) outside this class."""
