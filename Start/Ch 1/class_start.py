@@ -5,7 +5,9 @@
 class Book:
     # TODO: Properties defined at the class level are shared by all instances
     BOOK_TYPES = ("HARDCOVER", "PAPERBACK", "EBOOK")
+
     # TODO: double-underscore properties are hidden from other classes
+    __booklist = None
 
     # TODO: create a class method
     @classmethod
@@ -13,6 +15,10 @@ class Book:
         return cls.BOOK_TYPES
 
     # TODO: create a static method
+    def getbooklist():
+        if Book.__booklist == None:
+            Book.__booklist = []
+        return Book.__booklist
 
     # instance methods receive a specific object instance as an argument
     # and operate on data specific to that object instance
@@ -32,6 +38,10 @@ print("Book Types: ", Book.get_book_type())
 
 # TODO: Create some book instances
 b1 = Book("The one thing", "HARDCOVER")
-# b2 = Book("The Avengers", "COMIC")
+b2 = Book("The Avengers", "EBOOK")
 
 # TODO: Use the static method to access a singleton object
+thebooks = Book.getbooklist()
+thebooks.append(b1)
+thebooks.append(b2)
+print(thebooks)
