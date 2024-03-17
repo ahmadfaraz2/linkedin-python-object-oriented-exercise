@@ -11,7 +11,8 @@
 
 
 class Stock:
-    def __init__(self, ticker: str, price: float, company: str):
+
+    def __init__(self, ticker: str, price: float, company: str) -> None:
         self.ticker = ticker
         self.price = price
         self.company = company
