@@ -33,3 +33,9 @@ class Circle(GraphicShape, JSONify):
 c = Circle(10)
 print(c.calcArea())
 print(c.toJSON())
+
+
+"""
+    We use "interface" to enforce that classes inheriting
+    from the interface must implement certain methods
+"""
