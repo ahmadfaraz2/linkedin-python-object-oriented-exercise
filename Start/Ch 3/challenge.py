@@ -43,7 +43,7 @@ class Bond(Asset):
         )
 
     def __lt__(self, value):
-        return self.price < value.price
+        return self.yieldamt < value.yieldamt
 
 
 # ~~~~~~~~~ TEST CODE ~~~~~~~~~
