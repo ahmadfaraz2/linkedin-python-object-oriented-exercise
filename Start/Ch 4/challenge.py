@@ -6,11 +6,16 @@
 # that makes them sortable
 
 from dataclasses import dataclass
+from abc import ABC, abstractmethod
 
 
 @dataclass
-class Asset:
+class Asset(ABC):
     price: float
+
+    @abstractmethod
+    def __lt__(self, other):
+        pass
 
 
 @dataclass
@@ -18,8 +23,8 @@ class Stock(Asset):
     ticker: str
     company: str
 
-    def __lt__(self, value):
-        return self.price < value.price
+    def __lt__(self, other):
+        return self.price < other.price
 
 
 @dataclass
